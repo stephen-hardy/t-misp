@@ -1,0 +1,1 @@
+export default json => json.item.reduce((obj, i) => { obj[i.ifname[0]] = i.descript[0]; return obj; }, {})

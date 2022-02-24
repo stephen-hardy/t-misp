@@ -1,0 +1,1 @@
+export default json => json.module_result[0];

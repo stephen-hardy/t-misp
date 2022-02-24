@@ -1,0 +1,1 @@
+export default json => json.item.map(i => ({ ip: i.ipaddr[0], mask: i.netmask[0] }));

@@ -1,0 +1,1 @@
+export default json => ({ apps: json.item[0].apps[0], modem: json.item[0].modem[0] });
