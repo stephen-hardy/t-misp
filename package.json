@@ -1,6 +1,6 @@
 {
 	"name": "tmisp",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Read data from T-Mobile Home Internet Modems",
 	"main": "t-misp.mjs",
 	"repository": {
@@ -15,7 +15,7 @@
 		"Askey"
 	],
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"No tests specified\" && exit 0"
 	},
 	"author": "Stephen Hardy",
 	"license": "MIT",
