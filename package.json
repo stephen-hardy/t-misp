@@ -14,6 +14,9 @@
 		"ISP",
 		"Askey"
 	],
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
 	"author": "Stephen Hardy",
 	"license": "MIT",
 	"bugs": { "url": "https://github.com/stephen-hardy/t-misp/issues" },
