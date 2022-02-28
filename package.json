@@ -1,6 +1,6 @@
 {
 	"name": "tmisp",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Read data from T-Mobile Home Internet Modems",
 	"main": "t-misp.mjs",
 	"repository": {
