@@ -1,0 +1,1 @@
+export default json => json.item.map(i => ({ enabled: Boolean(+i.enable[0]) }));

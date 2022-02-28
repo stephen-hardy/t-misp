@@ -1,0 +1,1 @@
+export default json => ({ airplaneMode: Boolean(+json.item[0].enable[0]) });

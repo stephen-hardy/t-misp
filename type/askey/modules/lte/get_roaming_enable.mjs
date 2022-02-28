@@ -1,0 +1,1 @@
+export default json => ({ roaming: Boolean(+json.item[0].enable[0]) });

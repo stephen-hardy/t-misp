@@ -1,1 +1,0 @@
-export default json => json.item[0].version[0];

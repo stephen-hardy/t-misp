@@ -1,0 +1,1 @@
+export default json => ({ status: +json.item[0].status[0] === 0 ? 'Upgrade available' : 'Up to date' });
