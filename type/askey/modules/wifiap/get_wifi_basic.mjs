@@ -18,8 +18,8 @@ export default json => json.item.map((i, radio) => ({
 	ch_width: width[+i.ch_width[0]] || width[0],
 	channel: +i.channel[0],
 	country_code: i.country_code[0],
-	enable: +i.enable[0],
+	enabled: Boolean(+i.enable[0]),
 	ifname: i.ifname[0],
 	ssid: i.ssid[0],
-	ssid_hidden: +i.ssid_hidden[0]
+	ssid_hidden: Boolean(+i.ssid_hidden[0])
 }))

@@ -2,13 +2,13 @@ import crypto from 'crypto'; import { parseStringPromise as parseXML } from 'xml
 const fetch = globalThis.fetch || (await import('node-fetch')).default;
 // auth
 	async function auth(tmisp, cmd, cfg = {}) {
-		return fetch(`http://${tmisp.ip}/auth.fcgi`, {
+		return (await (await fetch(`http://${tmisp.ip}/auth.fcgi`, {
 			method: 'POST', contentType: 'application/json; charset=UTF-8',
 			body: JSON.stringify({ AuthCmd: cmd, ...cfg })
-		}).then(r => r.json()).then(r => r.Result[0]);
+		})).json()).Result[0];
 	}
 	export async function login(tmisp) {
-		const secret = (await (await fetch('http://192.168.1.1/vendor/hmac-sha512.js')).text()).slice(8464, 8476),
+		const secret = (await (await fetch(`http://${tmisp.ip}/vendor/hmac-sha512.js`)).text()).slice(8464, 8476),
 			UserPW = crypto.createHmac('SHA512', secret).update(tmisp.password).digest('hex');
 		tmisp.uid = (await auth(tmisp, 'Login', { UserName: tmisp.username, UserPW })).Login;
 	};
@@ -25,7 +25,8 @@ const fetch = globalThis.fetch || (await import('node-fetch')).default;
 		if (!tmisp.uid) { await tmisp.login(); }
 		const body = ['transactionid=' + transaction, ...files.map(toFileName), ...add, '!'].join('&'),
 			response = await fetch(`http://${tmisp.ip}/wrcp.fcgi?AuthID=${tmisp.uid}&ResetLoginTime=true`, { method: 'POST', body }),
-			xml = await response.text(), json = await parseXML(xml);
+			xml = await response.text(),
+			json = await parseXML(xml);
 		return Promise.all(json.web_main.command.map(async c => {
 			const modName = c.module_name[0], cmd = c.module_command[0];
 			if (c.module_result[0] === 'wait') {

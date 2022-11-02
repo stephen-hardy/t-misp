@@ -1,11 +1,11 @@
 {
 	"name": "tmisp",
-	"version": "1.0.2",
+	"version": "1.1.0",
 	"description": "Read data from T-Mobile Home Internet Modems",
-	"main": "t-misp.mjs",
+	"main": "tmisp.mjs",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/stephen-hardy/t-misp.git"
+		"url": "git+https://github.com/stephen-hardy/tmisp.git"
 	},
 	"keywords": [
 		"T-Mobile",
@@ -19,10 +19,12 @@
 	},
 	"author": "Stephen Hardy",
 	"license": "MIT",
-	"bugs": { "url": "https://github.com/stephen-hardy/t-misp/issues" },
-	"homepage": "https://github.com/stephen-hardy/t-misp#readme",
+	"bugs": {
+		"url": "https://github.com/stephen-hardy/tmisp/issues"
+	},
+	"homepage": "https://github.com/stephen-hardy/tmisp#readme",
 	"dependencies": {
-		"node-fetch": "^3.2.0",
+		"node-fetch": "^3.2.10",
 		"xml2js": "^0.4.23"
 	}
 }
