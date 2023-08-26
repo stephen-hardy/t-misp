@@ -1,5 +1,4 @@
 import crypto from 'crypto'; import { parseStringPromise as parseXML } from 'xml2js';
-const fetch = globalThis.fetch || (await import('node-fetch')).default;
 // auth
 	async function auth(tmisp, cmd, cfg = {}) {
 		return (await (await fetch(`http://${tmisp.ip}/auth.fcgi`, {
